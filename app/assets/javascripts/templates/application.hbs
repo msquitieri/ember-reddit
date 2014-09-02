@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="header">
+    <ul id='nav' class="nav nav-pills pull-right">
+      <li id='home-nav'>{{#link-to 'links'}}Home{{/link-to}}</li>
+      <li id='create-nav'>{{#link-to 'links.new'}}Create{{/link-to}}</li>
+    </ul>
+    <h3 class="text-muted">Ember Reddit</h3>
+  </div>
+  <div id="main-content">
+    {{outlet}}
+  </div>
+</div>

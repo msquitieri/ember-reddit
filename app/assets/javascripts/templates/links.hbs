@@ -1,0 +1,15 @@
+<div id="create">
+  {{outlet}}
+</div>
+
+<h3>Here are the links:</h3>
+<ul class='list-group'>
+  {{#each link in controller}}
+    {{#link-to 'link' link}}
+      <li class="list-group-item">
+        <span class="badge">{{link.votes}}</span>
+        {{link.link}}
+      </li>
+    {{/link-to}}
+  {{/each}}
+</ul>

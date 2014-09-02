@@ -1,0 +1,18 @@
+<article id="link">
+  <form action="">
+    <fieldset>
+      <dl>
+        <dt><label for="link">Link:</label></dt>
+        <dd>{{input value=fields.link}}</dd>
+      </dl>
+      <dl>
+        <dt><label for="votes">Votes:</label></dt>
+        <dd>{{input value=fields.votes}}</dd>
+      </dl>
+    </fieldset>
+    <fieldset class="actions">
+      <button class="btn btn-primary" {{action 'createLink'}}>Create Link</button>
+      <button class="btn btn-danger" {{action 'cancel'}}>Cancel</button>
+    </fieldset>
+  </form>
+</article>
