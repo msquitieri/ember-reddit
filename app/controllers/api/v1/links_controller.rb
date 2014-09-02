@@ -1,45 +1,31 @@
-class LinksController < ApplicationController
+class Api::V1::LinksController < ApplicationController
+  respond_to :json
+
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links.json
   def index
-    @links = Link.all
+    respond_with Link.all
   end
 
   # GET /links/1.json
   def show
+    respond_with @link
   end
 
   # POST /links.json
   def create
-    @link = Link.new(link_params)
-
-    respond_to do |format|
-      if @link.save
-        format.json { render :show, status: :created, location: @link }
-      else
-        format.json { render json: @link.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with :api, :v1, Link.create(link_params)
   end
 
   # PATCH/PUT /links/1.json
   def update
-    respond_to do |format|
-      if @link.update(link_params)
-        format.json { render :show, status: :ok, location: @link }
-      else
-        format.json { render json: @link.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with @link.update(link_params)
   end
 
   # DELETE /links/1.json
   def destroy
-    @link.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    respond_with @link.destroy
   end
 
   private
